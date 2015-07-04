@@ -1,4 +1,4 @@
-<%@page language="java" pageEncoding="UTF-8"%>
+<%@page language="java" import="java.net.URLDecoder" pageEncoding="UTF-8"%>
 <%@include file="sqlConnection.jsp" %>
 <%
 	response.setCharacterEncoding("UTF-8");
@@ -6,7 +6,7 @@
 
 	//Get params
 	String username=(String)session.getAttribute("username");
-	String message=request.getParameter("message");
+	String message = request.getParameter("message");
 
 	if(username == null)
 	{

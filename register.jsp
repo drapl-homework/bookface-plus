@@ -9,20 +9,55 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-	<form action="registerResponse.jsp" method="post">
-		用户名：<input type="text" name="username"></br>
-		昵称：<input type="text" name="nickname"></br>
-		密码：<input type="password" name="password"></br>
-		重复密码：<input type="password" name="password2"></br>
-		性别：
-		<select name="sex">
-			<option value ="男">男</option>
-			<option value ="女">女</option>
-		</select></br>
-		邮箱：<input type="email" name="email"></br>
-		生日：<input type="text" name="birthday"></br>
-		<input type="submit" value="确认">
+	<div class="posts">
+		<h1 class="content-subhead">Register</h1>
+		<section class="post">
+		<header class="post-header">
+			<h2 class="post-title">注册</h2>
+		</header>
+		<div class="post-description">
+			<p>
+
+<form id="reg_form" class="pure-form pure-form-aligned" name="input">
+	<fieldset>
+		<div class="pure-control-group">
+			<label for="username">用户名</label>
+			<input type="text" name="username">
+		</div>
+		<div class="pure-control-group">
+			<label for="nickname">昵称</label>
+			<input type="text" name="nickname">
+		</div>
+		<div class="pure-control-group">
+			<label for="password">密码</label>
+			<input type="password" name="password">
+		</div>
+		<div class="pure-control-group">
+			<label for="password">重复密码</label>
+			<input type="password" name="password2">
+		</div>
+		<div class="pure-control-group">
+			<label for="sex">性别</label>
+			<select name="sex">
+				<option value ="男">男</option>
+				<option value ="女">女</option>
+			</select>
+		</div>
+		<div class="pure-control-group">
+			<label for="email">邮箱</label>
+			<input type="email" name="email">
+		</div>
+		<div class="pure-control-group">
+			<label for="birthday">生日</label>
+			<input type="date" name="birthday">
+		</div>
+		<div class="pure-controls">
+			<a class="pure-button pure-button-primary" onclick='$.post("registerResponse.jsp", $("#reg_form").serialize(), function (result) { alert(result); window.location.href="login.jsp"; }, "text").error(function() { alert("注册错误"); });'>提交</a>
+		</div>
+	</fieldset>
 	</form>
+</div>
+</div>
 	<jsp:include page="footer.jsp"/>
 </body>
 </html>

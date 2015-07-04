@@ -18,8 +18,9 @@
 	//Querying from database
 	PreparedStatement stmt = conn.prepareStatement(
 		"INSERT INTO comment(username, message_id, content) values(?, ?, ?)");
-	stmt.setString(1, username_id);
-	stmt.setString(2, content);
+	stmt.setString(1, username);
+	stmt.setString(2, message_id);
+	stmt.setString(3, content);
 
 	try {
 		stmt.executeUpdate();

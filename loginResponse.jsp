@@ -28,8 +28,7 @@
 		out.println("用户名或密码错误！");
 		return;
 	}
-	out.println("登录成功！");
-	session.setAttribute("login","ok");
 	session.setAttribute("username", username);
+	out.println("登录成功！");
 %>
 
