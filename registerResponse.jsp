@@ -10,6 +10,7 @@
 	String password=request.getParameter("password");
 	String sex=request.getParameter("sex");
 	String email=request.getParameter("email");
+	String avatar=request.getParameter("avatar");
 	String birthday=request.getParameter("birthday");
 
 	if(username == null || password == null ||
@@ -19,13 +20,14 @@
 
 	//Querying from database
 	PreparedStatement stmt = conn.prepareStatement(
-		"INSERT into account values(?, ?, ?, ?, ?, ?);");
+		"INSERT into account values(?, ?, ?, ?, ?, ?, ?);");
 	stmt.setString(1, username);
 	stmt.setString(2, nickname);
 	stmt.setString(3, password);
 	stmt.setString(4, sex);
 	stmt.setString(5, email);
-	stmt.setString(6, birthday);
+	stmt.setString(6, avatar);
+	stmt.setString(7, birthday);
 
 	try {
 		stmt.executeUpdate();

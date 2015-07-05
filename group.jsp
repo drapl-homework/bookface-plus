@@ -37,16 +37,16 @@
 		<section class="post">
 
 		<header class="post-header">
-			<img class="post-avatar" alt="Tilo Mitra&#x27;s avatar" height="48" width="48" src="img/test-avatar.png">
+		<img class="post-avatar" alt="Tilo Mitra&#x27;s avatar" height="48" width="48" src="img/group-avatar<%=rs.getString("group_avatar")%>.png">
 
 			<h2 class="post-title"><%=rs.getString("group_name")%></h2>
 		</header>
 		<div class="post-description">
 		<p>
-		小组介绍
+		<%=rs.getString("group_intro")%>
 		</p>
 		<p>
-			<a class="pure-button pure-button-primary" href="<%="groupInfo.jsp?group_id=" + rs.getString("group_id")%>">查看本组</a>
+			<a class="pure-button pure-button-active" href="<%="groupInfo.jsp?group_id=" + rs.getString("group_id")%>">查看本组</a>
 		</p>
 		</div>
 	</div>
@@ -67,6 +67,18 @@
 		<div class="pure-control-group">
 			<label for="group_name">用户组名称</label>
 			<input type="text" name="group_name" />
+		</div>
+		<div class="pure-control-group">
+			<label for="group_avatar">头像编号</label>
+			<select name="group_avatar">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+			</select>
 		</div>
 
 		<div class="pure-control-group">

@@ -9,7 +9,7 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-	<div class="posts">
+	<div class="posts h_align">
 		<h1 class="content-subhead">Register</h1>
 		<section class="post">
 		<header class="post-header">
@@ -41,6 +41,21 @@
 			<select name="sex">
 				<option value ="男">男</option>
 				<option value ="女">女</option>
+			</select>
+		</div>
+		<div class="pure-control-group">
+			<label for="avatar">头像编号</label>
+			<select name="avatar">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
 			</select>
 		</div>
 		<div class="pure-control-group">

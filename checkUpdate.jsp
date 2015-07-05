@@ -26,7 +26,7 @@
 	<section class="post">
 
 	<header class="post-header">
-		<img class="post-avatar" alt="Tilo Mitra&#x27;s avatar" height="48" width="48" src="img/test-avatar.png">
+		<img class="post-avatar" alt="Tilo Mitra&#x27;s avatar" height="48" width="48" src="img/user-avatar<%=rs.getString("avatar")%>.png">
 		<p class="post-meta">
 		作者：<a href="<%="userinfo.jsp?username=" + rs.getString("account.username")%>" ><%=rs.getString("nickname")%></a> &nbsp;&nbsp;&nbsp;&nbsp; 时间：<%=rs.getString("time")%><br>
 		</p>

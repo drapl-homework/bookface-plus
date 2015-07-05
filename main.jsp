@@ -77,18 +77,20 @@ timeId = setInterval("checkUpdate();",30000);
 	</div>	
 
 	<%
-		PreparedStatement stmt = conn.prepareStatement("select distinct message_id, account.username, nickname, time, content from message left join account on message.username = account.username where account.username in ( select username_2 from friend where username_1 = ?) or account.username = ? order by time desc;");
+		PreparedStatement stmt = conn.prepareStatement("select distinct message_id, account.username, nickname, time, content, avatar from message left join account on message.username = account.username where account.username in ( select username_2 from friend where username_1 = ?) or account.username = ? order by time desc;");
 		stmt.setString(1, username);
 		stmt.setString(2, username);
 		ResultSet rs = stmt.executeQuery();
+		int counter = 0;
 		while (rs.next()) {
 		%>
 		<div class="posts h_align">
-		<h1 class="content-subhead"></h1>
+		<h1 class="content-subhead"><%if(counter++ == 0) {%>Latest Message<%}%></h1>
 		<section class="post">
 
 		<header class="post-header">
-			<img class="post-avatar" alt="Tilo Mitra&#x27;s avatar" height="48" width="48" src="img/test-avatar.png">
+			<img class="post-avatar" alt="Tilo Mitra&#x27;s avatar" height="48" width="48" src="img/user-avatar<%=rs.getString("avatar")%>.png">
+			<%if(counter == 1) {%><h2 class="post-title">最新动态</h2><%}%>
 			<p class="post-meta">
 			作者：<a href="<%="userinfo.jsp?username=" + rs.getString("account.username")%>" ><%=rs.getString("nickname")%></a> &nbsp;&nbsp;&nbsp;&nbsp; 时间：<%=rs.getString("time")%><br>
 			</p>

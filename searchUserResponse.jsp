@@ -33,7 +33,7 @@
 		<section class="post">
 
 		<header class="post-header">
-			<img class="post-avatar" alt="Tilo Mitra&#x27;s avatar" height="48" width="48" src="img/test-avatar.png">
+			<img class="post-avatar" alt="Tilo Mitra&#x27;s avatar" height="48" width="48" src="img/user-avatar<%=rs.getString("avatar")%>.png">
 		</header>
 		<div class="post-description">
 			<p>

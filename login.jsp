@@ -15,7 +15,7 @@ function mainLogin() {
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-	<div class="posts">
+	<div class="posts h_align">
 		<h1 class="content-subhead">Login</h1>
 		<section class="post">
 		<header class="post-header">
